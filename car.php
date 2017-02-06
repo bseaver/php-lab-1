@@ -33,7 +33,7 @@ $cars = array($porsche, $ford, $lexus, $mercedes);
 $max_price = 100000000;
 $my_key = "price";
 if (array_key_exists($my_key, $_GET)) {
-  $max_price = _GET[$my_key];
+  $max_price = $_GET[$my_key];
 }
 
 $cars_matching_search = array();
