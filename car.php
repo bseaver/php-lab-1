@@ -1,9 +1,9 @@
 <?php
 class Car
 {
-    public $make_model;
-    public $price;
-    public $miles;
+    private $make_model;
+    private $price;
+    private $miles;
 
     function __construct($make, $price_of_car, $mile_on_car)
     {
@@ -15,6 +15,21 @@ class Car
     function worthBuying($max_price)
     {
         return $this->price < $max_price;
+    }
+
+    function getMakeModel()
+    {
+        return $this->make_model;
+    }
+
+    function getPrice()
+    {
+        return $this->price;
+    }
+
+    function getMiles()
+    {
+        return $this->miles;
     }
 }
 
@@ -61,10 +76,10 @@ foreach ($cars as $car) {
     <ul>
         <?php
             foreach ($cars_matching_search as $car) {
-                echo "<li> $car->make_model </li>";
+                echo "<li> " . $car->getMakeModel() . "</li>";
                 echo "<ul>";
-                    echo "<li> $$car->price </li>";
-                    echo "<li> Miles: $car->miles </li>";
+                    echo "<li> $" . $car->getPrice() .  "</li>";
+                    echo "<li> Miles: " . $car->getMiles() . "</li>";
                 echo "</ul>";
             }
         ?>
