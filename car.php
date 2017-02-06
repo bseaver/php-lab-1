@@ -4,30 +4,32 @@ class Car
     public $make_model;
     public $price;
     public $miles;
+
+    function __construct($make, $price_of_car, $mile_on_car)
+    {
+        $this->make_model = $make;
+        $this->price = $price_of_car;
+        $this->miles = $mile_on_car;
+    }
 }
 
+$cars = array();
 
-$porsche = new Car();
-$porsche->make_model = "2014 Porsche 911";
-$porsche->price = 114991;
-$porsche->miles = 7864;
+array_push($cars,
+    new Car("2014 Porsche 911", 114991, 7864)
+);
 
-$ford = new Car();
-$ford->make_model = "2011 Ford F450";
-$ford->price = 55995;
-$ford->miles = 14241;
+array_push($cars,
+    new Car("2011 Ford F450", 55995, 14241)
+);
 
-$lexus = new Car();
-$lexus->make_model = "2013 Lexus RX 350";
-$lexus->price = 44700;
-$lexus->miles = 20000;
+array_push($cars,
+    new Car("2013 Lexus RX 350", 44700, 20000)
+);
 
-$mercedes = new Car();
-$mercedes->make_model = "Mercedes Benz CLS550";
-$mercedes->price = 39900;
-$mercedes->miles = 37979;
-
-$cars = array($porsche, $ford, $lexus, $mercedes);
+array_push($cars,
+    new Car("Mercedes Benz CLS550", 39900, 37979)
+);
 
 // Enable form to work without passed in price
 $max_price = 100000000;
