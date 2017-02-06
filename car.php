@@ -84,5 +84,10 @@ foreach ($cars as $car) {
             }
         ?>
     </ul>
+    <?php
+        if (empty($cars_matching_search)) {
+            echo "<p>No cars match criteria.</p>";
+        }
+    ?>
 </body>
 </html>
