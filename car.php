@@ -29,7 +29,13 @@ $mercedes->miles = 37979;
 
 $cars = array($porsche, $ford, $lexus, $mercedes);
 
-$max_price = $_GET["price"];
+// Enable form to work without passed in price
+$max_price = 100000000;
+$my_key = "price";
+if (array_key_exists($my_key, $_GET)) {
+  $max_price = _GET[$my_key];
+}
+
 $cars_matching_search = array();
 foreach ($cars as $car) {
     if ($car->price < $max_price) {
